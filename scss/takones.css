@@ -1,0 +1,210 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*INDEX*/
+/*titulo principal*/
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  width: 80%;
+}
+
+.barraBusqueda {
+  background-color: black;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.barraBusqueda form button {
+  padding: 2px 15px;
+  background-color: #d10c0c;
+  border: none;
+  border-radius: 2px;
+  color: white;
+}
+
+nav {
+  background-color: black;
+  color: white;
+}
+
+nav h5 {
+  font-size: 16px;
+}
+
+nav button span {
+  font-size: 16px;
+}
+
+h2 {
+  margin-bottom: 0;
+  text-align: center;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#navbarToggleExternalContent {
+  background-color: black;
+}
+
+#navbarToggleExternalContent ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+#navbarToggleExternalContent ul li {
+  padding: 5px;
+}
+
+#navbarToggleExternalContent ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+#carouselExampleCaptions {
+  border-bottom: solid 8px black;
+}
+
+#carouselExampleCaptions img {
+  height: calc(100vh - 170px);
+  width: 100%;
+}
+
+#carouselExampleCaptions h5 {
+  font-size: 30px;
+  color: white;
+  font-weight: bolder;
+}
+
+.informacion {
+  text-align: center;
+}
+
+.informacion .informacion__items {
+  padding: 20px 20px 0px 20px;
+}
+
+.informacion .informacion__items i {
+  font-size: 50px;
+}
+
+.informacion .informacion__items p {
+  font-size: 14px;
+}
+
+.informacion .informacion__items p span {
+  font-weight: bolder;
+}
+
+.diario {
+  text-align: center;
+}
+
+.diario p {
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.diario p span {
+  font-weight: bold;
+}
+
+.diario button {
+  margin: auto;
+  margin-top: 10px;
+  padding: 2px 25px;
+  display: block;
+  background-color: #d10c0c;
+  border: none;
+  border-radius: 2px;
+  color: white;
+}
+
+.footer {
+  background-color: black;
+  margin-top: 20px;
+}
+
+.footer .redesSociales {
+  padding: 10px;
+  text-align: center;
+}
+
+.footer .redesSociales i {
+  padding: 0px 5px 0px 5px;
+  font-size: 30px;
+  color: white;
+}
+
+.footer .mapaSitio .mapaSitio__items ul {
+  list-style-type: none;
+  margin-left: -30px;
+}
+
+.footer .mapaSitio .mapaSitio__items ul li {
+  text-align: center;
+}
+
+.footer .mapaSitio .mapaSitio__items ul li a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #aa9f9f;
+}
+
+.footer .mapaSitio .mapaSitio__items a:hover {
+  color: red;
+}
+
+.footer button {
+  display: block;
+  margin: auto;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 5px 15px;
+}
+
+.contacto ul {
+  display: inline-block;
+  list-style: none;
+}
+
+.contacto ul li {
+  display: inline-block;
+  color: white;
+}
+
+.contacto ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.contacto a:hover {
+  color: red;
+}
+
+.contacto .contacto--border {
+  border-right: solid 2px white;
+  padding-right: 4px;
+}
+
+h5 {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}
+
+.hoverBoton:hover {
+  background-color: #9b1818;
+}
+/*# sourceMappingURL=takones.css.map */

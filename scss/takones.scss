@@ -1,0 +1,188 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*INDEX*/
+/*titulo principal*/
+.logo{
+    text-align: center;
+    img{
+        width: 80%;
+    }
+}
+.barraBusqueda{
+    background-color: rgb(0, 0, 0);
+    padding-top: 10px;
+    text-align: center;
+    form{
+        button{
+            padding: 2px 15px;
+            background-color: rgb(209, 12, 12);
+            border: none;
+            border-radius: 2px;
+            color: rgb(255, 255, 255);
+        }
+    }
+}
+nav{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    h5{
+        font-size: 16px;
+    }
+    button{
+        span{
+            font-size: 16px;
+        }
+    }
+}
+h2{
+    margin-bottom: 0;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    font-size: 20px;
+}
+#navbarToggleExternalContent{
+    background-color: rgb(0, 0, 0);
+    ul{
+        list-style: none;
+        margin-bottom: 0;
+    }
+    ul li{
+        padding: 5px;
+    }
+    ul li a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+}
+
+#carouselExampleCaptions{
+    border-bottom: solid 8px rgb(0, 0, 0);
+    img{
+        height: calc(100vh - 170px);
+        width: 100%;
+    }
+    h5{
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+        font-weight: bolder;
+    }
+}
+
+.informacion{
+    text-align: center;
+    .informacion__items{
+        padding: 20px 20px 0px 20px;
+        i{
+            font-size: 50px;
+        }
+        p{
+            font-size: 14px;
+            span{
+                font-weight: bolder;
+            }
+        }
+    }
+}
+
+.diario{
+    text-align: center;
+    p{
+        padding: 10px;
+        margin-bottom: 0px;
+        span{
+            font-weight: bold;
+        }
+    }
+    button{
+        margin: auto;
+        margin-top: 10px;
+        padding: 2px 25px;
+        display: block;
+        background-color: rgb(209, 12, 12);
+        border: none;
+        border-radius: 2px;
+        color: rgb(255, 255, 255);
+    }
+}
+
+.footer{
+    background-color: rgb(0, 0, 0);
+    margin-top: 20px;
+    .redesSociales{
+        padding: 10px;
+        text-align: center;
+        i{
+            padding: 0px 5px 0px 5px ;
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+        }
+    }
+    .mapaSitio{
+        .mapaSitio__items{
+            ul{
+                list-style-type: none;
+                margin-left: -30px;
+            }
+            ul li{
+                text-align: center;
+            }
+            ul li a{
+                font-size: 12px;
+                text-decoration: none;
+                color: rgb(170, 159, 159);
+            }
+            a:hover{
+                color: red;
+            }
+        }
+    }
+    button{
+        display: block;
+        margin: auto;
+        background-color: red;
+        border: none;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        padding: 5px 15px;
+    }
+}
+
+.contacto{
+        ul{
+            display: inline-block;
+            list-style: none;
+        }
+        ul li{
+            display: inline-block;
+            color: rgb(255, 255, 255);
+        }
+        ul li a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 14px;
+        }
+        a:hover{
+            color: red;
+        }
+        .contacto--border{
+            border-right: solid 2px rgb(255, 255, 255);
+            padding-right: 4px;
+        }
+}
+
+
+h5{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+
+.hoverBoton:hover{
+    background-color: rgb(155, 24, 24);
+}
