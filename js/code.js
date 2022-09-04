@@ -269,6 +269,8 @@ class Zapatos{
 }
 
 //array para guardar los zapatos creados
+const elementosCarrito = [];
+
 const zapateria = [];
 console.log(zapateria)
 
@@ -285,6 +287,26 @@ function cargarZapatos() {
 
 cargarZapatos()
 cartasCatalolgo();
+
+
+
+function dibujarCarrito() {
+    let renglonesCarrito = '';
+
+    elementosCarrito.forEach(
+        (elemento) => {
+            renglonesCarrito+=`
+                <tr>
+                    <td>${elemento.zapato.codigo}</td>
+                    <td>${elemento.zapato.marca}</td>
+                    <td>${elemento.zapato.modelo}</td>
+                    <td>$ ${elemento.zapato.precio}</td>
+                </tr>
+            `;
+        }
+    );
+
+}
 
 //crear cartasCatalogo:
 function cartasCatalolgo(zapato) {
@@ -319,7 +341,22 @@ function cartasCatalolgo(zapato) {
     let contenedorCarta = document.createElement("div");
     contenedorCarta.className = "col-xs-6 col-sm-3 col-md-2";
     contenedorCarta.append(carta);
-    
+
+    //Agregar algunos eventos
+    botonAgregar.onclick = () => {
+        Swal.fire(
+            'Good job!',
+            'Agregaste ${zapato.modelo] al Carrito',
+            'success'
+        )
+
+        let elementoCarrito = new ElementoCarrito(producto, 1);
+        elementosCarrito.push(elementoCarrito);
+
+        dibujarCarrito();
+
+    } 
+
     return contenedorCarta;
 }
 
