@@ -186,3 +186,41 @@ h5{
 .hoverBoton:hover{
     background-color: rgb(155, 24, 24);
 }
+
+
+//empezamos a modificar el catalogo JS
+
+.catalogo__productos{
+    padding: 10px;
+    width: 100vw;
+    text-align: center;
+    img{
+        width: 100vw;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    h3{
+        color: black;
+    }
+    h5{
+        color: black;
+    }
+    button{
+        width: 100%;
+        background-color: rgb(209, 12, 12);
+        border: none;
+        padding: 10px;
+        color: white;
+    }
+}
+
+
+//modal carrito:
+#exampleModal{
+    h5{
+        color: red;
+    }
+}
+.productoCarrito{
+    display: flex;
+}

@@ -207,4 +207,42 @@ h5 {
 .hoverBoton:hover {
   background-color: #9b1818;
 }
+
+.catalogo__productos {
+  padding: 10px;
+  width: 100vw;
+  text-align: center;
+}
+
+.catalogo__productos img {
+  width: 100vw;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.catalogo__productos h3 {
+  color: black;
+}
+
+.catalogo__productos h5 {
+  color: black;
+}
+
+.catalogo__productos button {
+  width: 100%;
+  background-color: #d10c0c;
+  border: none;
+  padding: 10px;
+  color: white;
+}
+
+#exampleModal h5 {
+  color: red;
+}
+
+.productoCarrito {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=takones.css.map */
