@@ -245,4 +245,9 @@ h5 {
   display: -ms-flexbox;
   display: flex;
 }
+
+#cart {
+  position: relative;
+  bottom: 2px;
+}
 /*# sourceMappingURL=takones.css.map */

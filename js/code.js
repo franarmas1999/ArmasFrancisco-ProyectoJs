@@ -1,15 +1,16 @@
 //STOCK:
 const stockProductos = [
-    {marca: "Caterpiller", modelo: "Swensea", precio: "$40.000", img: "./image/borBerlina.jpg", id: "1356"},
-    {marca: "Caterpiller", modelo: "Swensea", precio: "$40.000", img: "./image/borBerlina.jpg", id: "2388"},
-    {marca: "Caterpiller", modelo: "Swensea", precio: "$40.000", img: "./image/borBerlina.jpg", id: "6856"},
-    {marca: "Caterpiller", modelo: "Swensea", precio: "$40.000", img: "./image/borBerlina.jpg", id: "4356"},
-    {marca: "Caterpiller", modelo: "Swensea", precio: "$40.000", img: "./image/borBerlina.jpg", id: "2226"},
-    {marca: "Caterpiller", modelo: "Swensea", precio: "$40.000", img: "./image/borBerlina.jpg", id: "1010"},
-    {marca: "Caterpiller", modelo: "Swensea", precio: "$40.000", img: "./image/borBerlina.jpg", id: "2796"},
-    {marca: "Caterpiller", modelo: "Swensea", precio: "$40.000", img: "./image/borBerlina.jpg", id: "5577"},
-    {marca: "Caterpiller", modelo: "Swensea", precio: "$40.000", img: "./image/borBerlina.jpg", id: "1406"}
+    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "1356", cantidad: 1},
+    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "2388", cantidad: 1},
+    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "6856", cantidad: 1},
+    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "4356", cantidad: 1},
+    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "2226", cantidad: 1},
+    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "1010", cantidad: 1},
+    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "2796", cantidad: 1},
+    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "5577", cantidad: 1},
+    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "1406", cantidad: 1}
 ]
+
 
 const catalogo = document.getElementById("catalogo");
 
@@ -38,14 +39,31 @@ stockProductos.forEach((producto)=>{
 
 
 const agregarAlCarrito = (productoId) => {
-    const item = stockProductos.find((producto)=> producto.id === productoId)
-    carritoDeCompras.push(item)
+    const existe = carritoDeCompras.some(producto => producto.id === productoId)
+    if (existe){
+        const producto = carritoDeCompras.map(producto => {
+            if(producto.id === productoId){
+                producto.cantidad++
+            }
+        })
+    }else{
+        const item = stockProductos.find((producto)=> producto.id === productoId)
+        carritoDeCompras.push(item)
+        console.log(carritoDeCompras);
+    }
     actualizarCarrito();
-    console.log(carritoDeCompras);
+    
 } 
 
 const carrito = document.getElementById("containCarrito");
 const precioTotal = document.getElementById("precioTotal");
+
+document.addEventListener("DOMContentLoaded", () =>{
+    if (localStorage.getItem("carritoDeCompras")){
+        carritoDeCompras = JSON.parse(localStorage.getItem("carritoDeCompras"))
+        actualizarCarrito()
+    }
+})
 
 const actualizarCarrito = () =>{
     carrito.innerHTML = "";
@@ -55,11 +73,13 @@ const actualizarCarrito = () =>{
         div.innerHTML = `
         <p>Nombre: ${producto.modelo}</p>
         <p>Precio: ${producto.precio}</p>
-        <p>Cantidad: ${producto.cantidad}</p>
+        <p>Cantidad: <span id="cantidad"> ${producto.cantidad}</span></p>
         <button onclick="eliminarDelCarrito(${producto.id})">Eliminar</button>
         `
 
         carrito.appendChild(div);
+
+        localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
     })
 
     precioTotal.innerText = carritoDeCompras.reduce((acumulador, producto) => acumulador + producto.precio, 0)
