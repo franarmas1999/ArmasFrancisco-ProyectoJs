@@ -246,8 +246,20 @@ h5 {
   display: flex;
 }
 
+.productoCarrito button {
+  background-color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+
 #cart {
   position: relative;
   bottom: 2px;
+}
+
+#botonEliminarCarrito {
+  font-size: 20px;
+  color: red;
 }
 /*# sourceMappingURL=takones.css.map */

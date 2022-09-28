@@ -1,14 +1,14 @@
 //STOCK:
 const stockProductos = [
     {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "1356", cantidad: 1},
-    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "2388", cantidad: 1},
-    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "6856", cantidad: 1},
-    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "4356", cantidad: 1},
-    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "2226", cantidad: 1},
-    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "1010", cantidad: 1},
-    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "2796", cantidad: 1},
-    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "5577", cantidad: 1},
-    {marca: "Caterpiller", modelo: "Swensea", precio: 40000, img: "./image/borBerlina.jpg", id: "1406", cantidad: 1}
+    {marca: "Lady Stork", modelo: "Polard", precio: 35000, img: "./image/borcegoBlanco.jpg", id: "2388", cantidad: 1},
+    {marca: "Timberland", modelo: "Chelsea", precio: 42000, img: "./image/borChelseaHombre.jpg", id: "6856", cantidad: 1},
+    {marca: "Caterpiller", modelo: "Colorado", precio: 40500, img: "./image/borColoradoHombre.jpg", id: "4356", cantidad: 1},
+    {marca: "Hush Puppie", modelo: "Dina", precio: 33500, img: "./image/borDina.jpg", id: "2226", cantidad: 1},
+    {marca: "Caterpiller", modelo: "Founder", precio: 37000, img: "./image/borFounderHombre.jpg", id: "1010", cantidad: 1},
+    {marca: "Hush Puppie", modelo: "Kelton", precio: 44000, img: "./image/borKeltonHombre.jpg", id: "2796", cantidad: 1},
+    {marca: "Timberland", modelo: "Molly", precio: 40000, img: "./image/borMolly.jpg", id: "5577", cantidad: 1},
+    {marca: "Merrel", modelo: "Segre", precio: 39500, img: "./image/borSegreHombre.jpg", id: "1406", cantidad: 1}
 ]
 
 
@@ -74,7 +74,7 @@ const actualizarCarrito = () =>{
         <p>Nombre: ${producto.modelo}</p>
         <p>Precio: ${producto.precio}</p>
         <p>Cantidad: <span id="cantidad"> ${producto.cantidad}</span></p>
-        <button onclick="eliminarDelCarrito(${producto.id})">Eliminar</button>
+        <button onclick="eliminarDelCarrito(${producto.id})"><i id="botonEliminarCarrito" class="fa-solid fa-trash"></i></button>
         `
 
         carrito.appendChild(div);
