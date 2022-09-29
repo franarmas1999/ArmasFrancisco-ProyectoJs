@@ -33,8 +33,12 @@ stockProductos.forEach((producto)=>{
     const boton = document.getElementById(`comprar-${producto.id}`)
     boton.addEventListener("click", ()=> {
         agregarAlCarrito(producto.id)
+        Swal.fire(
+            '',
+            'Felicitaciones, agregaste el producto al carrito',
+            'success'
+        )
     });
-    
 })
 
 
@@ -53,6 +57,30 @@ const agregarAlCarrito = (productoId) => {
     }
     actualizarCarrito();
     
+    // swal({
+    //     title: "¡Producto agregado!",
+    //     text: `Agregado al carrito de compra.`,
+    //     icon: "success",
+    //     buttons: {
+    //         cerrar: {
+    //             text: "Cerrar",
+    //             value: false
+    //         },
+    //         carrito: {
+    //             text: "Ir a carrito",
+    //             value: true
+    //         }
+    //     }
+    // }).then((irACarrito) => {
+
+    //     if(irACarrito) {
+    //         //swal("Vamos al carrito!");
+    //         const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {keyboard: true});
+    //         const modalToggle = document.getElementById('toggleMyModal'); 
+    //         myModal.show(modalToggle);
+
+    //     }
+    // });
 } 
 
 const carrito = document.getElementById("containCarrito");
