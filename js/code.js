@@ -11,10 +11,10 @@ const stockProductos = [
     {marca: "Merrel", modelo: "Segre", precio: 39500, img: "./image/borSegreHombre.jpg", id: "1406", cantidad: 1}
 ]
 
+//DIBUJAMOS EL CATALOGO:
+let precioVenta;
 
 const catalogo = document.getElementById("catalogo");
-
-let carritoDeCompras = [];
 
 stockProductos.forEach((producto)=>{
     let div = document.createElement("DIV")
@@ -25,11 +25,13 @@ stockProductos.forEach((producto)=>{
     <h3>${producto.modelo.toLocaleUpperCase()}</h3>
     <h5>${producto.marca}</h5>
     <p>Precio: ${producto.precio}</p>
+    <p>Precio Dolar: ${producto.precio / precioVenta}
     <button id="comprar-${producto.id}" class="boton-comprar">COMPRAR</button>
     </div>
     `
     catalogo.appendChild(div);
 
+    //AGREGAMOS AL CARRITO
     const boton = document.getElementById(`comprar-${producto.id}`)
     boton.addEventListener("click", ()=> {
         agregarAlCarrito(producto.id)
@@ -41,6 +43,20 @@ stockProductos.forEach((producto)=>{
     });
 })
 
+//API DE DOLAR, PRECIO DOLAR PARA CATALOGO
+
+async function valorDolar(){
+    const URLDOLAR = "https://api-dolar-argentina.herokuapp.com/api/dolarblue"
+    const resp = await fetch(URLDOLAR)
+    const data = await resp.json()
+    precioVenta = data.venta;
+}
+
+//DIBUJAMOS EL CARRITO :
+let carritoDeCompras = [];
+
+const carrito = document.getElementById("containCarrito");
+const precioTotal = document.getElementById("precioTotal");
 
 const agregarAlCarrito = (productoId) => {
     const existe = carritoDeCompras.some(producto => producto.id === productoId)
@@ -57,41 +73,7 @@ const agregarAlCarrito = (productoId) => {
     }
     actualizarCarrito();
     
-    // swal({
-    //     title: "¡Producto agregado!",
-    //     text: `Agregado al carrito de compra.`,
-    //     icon: "success",
-    //     buttons: {
-    //         cerrar: {
-    //             text: "Cerrar",
-    //             value: false
-    //         },
-    //         carrito: {
-    //             text: "Ir a carrito",
-    //             value: true
-    //         }
-    //     }
-    // }).then((irACarrito) => {
-
-    //     if(irACarrito) {
-    //         //swal("Vamos al carrito!");
-    //         const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {keyboard: true});
-    //         const modalToggle = document.getElementById('toggleMyModal'); 
-    //         myModal.show(modalToggle);
-
-    //     }
-    // });
 } 
-
-const carrito = document.getElementById("containCarrito");
-const precioTotal = document.getElementById("precioTotal");
-
-document.addEventListener("DOMContentLoaded", () =>{
-    if (localStorage.getItem("carritoDeCompras")){
-        carritoDeCompras = JSON.parse(localStorage.getItem("carritoDeCompras"))
-        actualizarCarrito()
-    }
-})
 
 const actualizarCarrito = () =>{
     carrito.innerHTML = "";
@@ -113,6 +95,8 @@ const actualizarCarrito = () =>{
     precioTotal.innerText = carritoDeCompras.reduce((acumulador, producto) => acumulador + producto.precio, 0)
 }
 
+//ELIMINAR Y VACIAR CARRITO:
+
 const eliminarDelCarrito = (productoId) => {
     let item = carritoDeCompras.find((producto)=>producto.id === productoId)
     let indice = carritoDeCompras.indexOf(item)
@@ -125,5 +109,19 @@ botonVaciar.addEventListener("click", ()=>{
     carritoDeCompras.length = 0;
     actualizarCarrito();
 })
+
+//LOCAL STORAGE CARRITO:
+
+document.addEventListener("DOMContentLoaded", () =>{
+    if (localStorage.getItem("carritoDeCompras")){
+        carritoDeCompras = JSON.parse(localStorage.getItem("carritoDeCompras"))
+        actualizarCarrito()
+    }
+})
+
+
+
+
+
 
 

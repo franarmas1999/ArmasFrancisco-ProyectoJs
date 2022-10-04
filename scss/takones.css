@@ -262,4 +262,28 @@ h5 {
   font-size: 20px;
   color: red;
 }
+
+.modal-footer .botonComprarTodo {
+  background-color: #d10c0c;
+  border: none;
+}
+
+@media screen and (min-width: 600px) {
+  #catalogo {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
+  }
+  .catalogo__productos {
+    width: 100%;
+  }
+  .catalogo__productos img {
+    width: 100%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+}
 /*# sourceMappingURL=takones.css.map */
